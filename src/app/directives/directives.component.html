@@ -39,10 +39,12 @@
 </div>
 
 <div class="">
-    <h3>[ngStyle]</h3>
+    <h3 [ngStyle]=ngStyleColor>[ngStyle]</h3>
+    <input [(ngModel)]="colorValue" name="" value="" type="text">
+    <button (click)="ngStyleColor.color = colorValue" name="button">Change Color</button>
 </div>
 
 <div>
   <h3>ngNonBindable</h3>
-
+  <p ngNonBindable>{{ngStyleColor}}</p>
 </div>

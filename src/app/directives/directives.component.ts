@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'directives',
@@ -11,6 +12,7 @@ export class DirectivesComponent implements OnInit {
   switchVariable: string;
   ngClass: string[];
   ngStyleFont: number = 10;
+  ngStyleColor = {color:'blue'};
   constructor() { }
 
   ngOnInit() {
