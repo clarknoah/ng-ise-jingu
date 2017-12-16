@@ -1,13 +1,61 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <input type="text" name="" value="">
+    <label for="firstName">First Name</label>
+    <input  formControlName="firstName"  type="text" name="" value="">
   </div>
 
   <div class="form-group">
-    <input type="text" name="" value="">
+    <label for="lastName">Last Name</label>
+    <input formControlName="lastName" type="text" name="" value="">
   </div>
 
   <div class="form-group">
-    <input type="number" name="" value="">
+    <label for="age">Age</label>
+    <input formControlName="age"  type="number" name="" value="">
   </div>
+
+  <div class="form-group">
+    <label for="sex">Sex</label> <br>
+    <input formControlName="sex"  type="radio" name="" value="Male"> M <br>
+    <input formControlName="sex"  type="radio" name="" value="Female"> F
+  </div>
+
+  <div class="form-group">
+    <label for="fEmail">Email</label>
+    <input formControlName="fEmail"  type="email" name="">
+  </div>
+
+  <div class="form-group">
+    <label for="fDate">Date</label>
+    <input formControlName="fDate"  type="date" name="">
+  </div>
+
+  <div class="form-group">
+    <label for="fBoolean">Boolean</label>
+    <input formControlName="fBoolean"  type="checkbox" name="">
+  </div>
+
+  <div class="form-group">
+    <label for="fColor">Color</label>
+    <input formControlName="fColor"  type="color" name="">
+  </div>
+
+  <div class="form-group">
+    <label for="fColor">Color</label>
+    <input formControlName="fColor"  type="color" name="">
+  </div>
+  <pre>
+    Color Pristine: {{form.get('fColor').pristine}}
+    Color Value:  {{form.get('fColor').value}}
+    untouched?: {{form.get('fColor').untouched}}
+    status: {{form.get('fColor').status}}
+  </pre>
+  <pre>
+    Form Valid?:
+
+  </pre>
+  <button type="submit" name="button">Submit</button>
+
+
 </form>
+<button (click)="logGroup()" name="button">Log Group</button>

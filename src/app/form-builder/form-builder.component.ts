@@ -7,8 +7,28 @@ import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 })
 export class FormBuilderComponent implements OnInit {
   form: FormGroup;
-  constructor() { }
+  constructor(fb: FormBuilder) {
 
+    this.form = fb.group({
+      firstName:[''],
+      lastName:[''],
+      age:[],
+      sex:[''],
+      fEmail:[''],
+      fDate:[],
+      fBoolean:[],
+      fColor:['']
+
+    });
+  }
+
+  onSubmit(){
+    console.log(this.form.controls);
+  }
+
+  logGroup(){
+    console.log(this.form.controls);
+  }
   ngOnInit() {
   }
 
