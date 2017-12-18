@@ -40,10 +40,6 @@
     <input formControlName="fColor"  type="color" name="">
   </div>
 
-  <div class="form-group">
-    <label for="fColor">Color</label>
-    <input formControlName="fColor"  type="color" name="">
-  </div>
   <pre>
     Color Pristine: {{form.get('fColor').pristine}}
     Color Value:  {{form.get('fColor').value}}
@@ -51,8 +47,7 @@
     status: {{form.get('fColor').status}}
   </pre>
   <pre>
-    Form Valid?:
-
+    Form Valid?: {{form.valid}}
   </pre>
   <button type="submit" name="button">Submit</button>
 
