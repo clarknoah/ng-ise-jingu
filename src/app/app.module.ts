@@ -26,7 +26,8 @@ import { MiscComponent } from './misc/misc.component';
 import { IseJinguComponent } from './ise-jingu/ise-jingu.component';
 import { LoggedInGuard } from './logged-in/logged-in.module';
 
-export function loadFactory(){
+import {ParamRoutingModule} from './param-routing/param-routing.module';
+export function loadFactory():FactoryService{
   return new FactoryService();
 }
 
@@ -69,7 +70,8 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ParamRoutingModule
   ],
   providers: [
       SingletonService,

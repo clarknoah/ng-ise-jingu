@@ -15,7 +15,17 @@ export class DependencyInjectionComponent implements OnInit {
     private singletonOne: SingletonService,
     private factoryOne: FactoryService,
     private singletonTwo: SingletonService,
-    private factoryTwo: FactoryService) { }
+    private factoryTwo: FactoryService = new FactoryService()) {
+      this.factoryOne = new FactoryService();
+      this.singletonOne.setString('Noah');
+      this.singletonOne.setString('Leah');
+      this.factoryOne.setString('Bob');
+      this.factoryOne.setString('Alex');
+      this.singletonTwo.setString('Frank');
+      this.singletonTwo.setString('Ryan');
+      this.factoryTwo.setString('Rob');
+      this.factoryTwo.setString('Larray');
+     }
 
   ngOnInit() {
   }

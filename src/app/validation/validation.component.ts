@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {SingletonService} from '../service/singleton.service';
 import {FormBuilder, FormGroup, FormControl, Validators, AbstractControl} from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import {FormBuilder, FormGroup, FormControl, Validators, AbstractControl} from '
 })
 export class ValidationComponent implements OnInit {
   form:FormGroup;
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private singleton: SingletonService) {
     this.form = fb.group({
       regular_string:['', Validators.compose([Validators.required])],
       custom_string:['', Validators.compose([Validators.required,
