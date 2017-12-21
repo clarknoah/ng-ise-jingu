@@ -26,6 +26,8 @@ import { MiscComponent } from './misc/misc.component';
 import { IseJinguComponent } from './ise-jingu/ise-jingu.component';
 import { LoggedInGuard } from './logged-in/logged-in.module';
 import {ParamRoutingModule, routess as paramRoutes} from './param-routing/param-routing.module';
+import { IoOneComponent } from './input-output/io-one/io-one.component';
+import { IoTwoComponent } from './input-output/io-two/io-two.component';
 export function loadFactory():FactoryService{
   return new FactoryService();
 }
@@ -63,7 +65,9 @@ const routes: Routes = [
     HttpComponent,
     LifecycleComponent,
     MiscComponent,
-    IseJinguComponent
+    IseJinguComponent,
+    IoOneComponent,
+    IoTwoComponent
   ],
   imports: [
     BrowserModule,
