@@ -19,12 +19,13 @@
 
 </div>
 
-<div class="" *ngIf="io1">
+<div class="" *ngIf="io1Ready === true">
   <h1>Input 2 Array Value </h1>
   <io-two [input_array]="io1" (return_array)="getIo2($event)"></io-two>
 </div>
-
-<div class="">
+<button type="button" (click)="io1Ready=true" name="button">io1Ready</button>
+<button type="button" (click)="io2Ready=true" name="button">io2Ready</button>
+<div class="" *ngIf="io2Ready===true">
   <h1>Parent Final Array Value</h1>
   <pre><p class="" *ngFor="let name of finalArray">
       {{name}}
