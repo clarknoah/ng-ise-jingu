@@ -1,3 +1,7 @@
-<p>
-  http works!
-</p>
+<button
+  (click)="getServerData()"
+  type="button"
+  name="button">Get Data</button>
+<ul *ngIf="serverData.length > 0">
+  <li *ngFor="let item of serverData">{{item}}</li>
+</ul>

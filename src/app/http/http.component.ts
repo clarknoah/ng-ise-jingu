@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http, Response} from '@angular/http';
 
 @Component({
   selector: 'http',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HttpComponent implements OnInit {
 
-  constructor() { }
+  serverData: string[] = [];
+
+  constructor(private http: Http) { }
 
   ngOnInit() {
   }
 
+  getServerData(){
+    this.http.request('http://jsonplaceholder.typicode.com/posts/1')
+    .subscribe((res:Response)=>{
+        this.serverData.push(res.json().title);
+    });
+  }
 }
