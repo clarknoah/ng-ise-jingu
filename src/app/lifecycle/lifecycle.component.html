@@ -1,5 +1,3 @@
-<p>
-{{incrementer}}
-</p>
 
-<button (click)="incrementValue()" name="button">Add Value</button>
+<button (click)="toggleIncrementer()" name="button">Toggle Incrementer</button>
+<incrementer *ngIf="showIncrementer === true" (incrementer)="incrementer"></incrementer>

@@ -1,42 +1,33 @@
 import { Component,
   OnInit,
-  OnDestroy,
-  OnChanges,
-  SimpleChange,
   DoCheck,
   AfterContentInit,
   AfterContentChecked,
   AfterViewInit,
-  AfterViewChecked,
-  Input} from '@angular/core';
+  AfterViewChecked} from '@angular/core';
 
 @Component({
   selector: 'lifecycle',
   templateUrl: './lifecycle.component.html',
   styleUrls: ['./lifecycle.component.css']
 })
-export class LifecycleComponent implements OnInit, OnChanges {
+export class LifecycleComponent implements OnInit {
 
-  incrementer: number = 0;
+  incrementor: number;
+  showIncrementer: boolean;
   constructor() {
     console.log("Constructor has been run");
-    console.log(`Incrementer Value(Construct): ${this.incrementer}`);
+    this.incrementor = 0;
+    this.showIncrementer = true;
+  }
+
+  toggleIncrementer(){
+    this.showIncrementer = !this.showIncrementer;
   }
 
   ngOnInit() {
     console.log("NgInit has been run !");
-    console.log(`Incrementer Value(OnInit): ${this.incrementer}`);
 
-  }
-
-  ngOnChanges(){
-  console.log("You Changed Something!");
-  console.log(`Incrementer Value(OnChanges): ${this.incrementer}`);
-
-  }
-
-  incrementValue(){
-    this.incrementer = 0;
   }
 
 }

@@ -28,6 +28,7 @@ import { LoggedInGuard } from './logged-in/logged-in.module';
 import {ParamRoutingModule, routess as paramRoutes} from './param-routing/param-routing.module';
 import { IoOneComponent } from './input-output/io-one/io-one.component';
 import { IoTwoComponent } from './input-output/io-two/io-two.component';
+import { IncrementerComponent } from './lifecycle/incrementer/incrementer.component';
 export function loadFactory():FactoryService{
   return new FactoryService();
 }
@@ -67,7 +68,8 @@ const routes: Routes = [
     MiscComponent,
     IseJinguComponent,
     IoOneComponent,
-    IoTwoComponent
+    IoTwoComponent,
+    IncrementerComponent
   ],
   imports: [
     BrowserModule,
