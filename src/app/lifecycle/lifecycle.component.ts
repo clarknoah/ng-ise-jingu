@@ -15,8 +15,8 @@ export class LifecycleComponent implements OnInit {
 
   incrementor: number;
   showIncrementer: boolean;
+    private numVal: number = 0;
   constructor() {
-    console.log("Constructor has been run");
     this.incrementor = 0;
     this.showIncrementer = true;
   }
@@ -25,8 +25,13 @@ export class LifecycleComponent implements OnInit {
     this.showIncrementer = !this.showIncrementer;
   }
 
+  increment(){
+    this.numVal ++;
+    console.log('Parent Component Initiated Change Detection');
+  }
+
   ngOnInit() {
-    console.log("NgInit has been run !");
+    console.log("Lifecycle Component NgInit has been run !");
 
   }
 
