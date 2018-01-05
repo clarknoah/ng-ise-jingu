@@ -29,6 +29,8 @@ import {ParamRoutingModule, routess as paramRoutes} from './param-routing/param-
 import { IoOneComponent } from './input-output/io-one/io-one.component';
 import { IoTwoComponent } from './input-output/io-two/io-two.component';
 import { IncrementerComponent } from './lifecycle/incrementer/incrementer.component';
+import { TitleDirDirective } from './content-projection/title-dir.directive';
+import { ContentComponent } from './content-projection/content/content.component';
 export function loadFactory():FactoryService{
   return new FactoryService();
 }
@@ -69,7 +71,9 @@ const routes: Routes = [
     IseJinguComponent,
     IoOneComponent,
     IoTwoComponent,
-    IncrementerComponent
+    IncrementerComponent,
+    TitleDirDirective,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
