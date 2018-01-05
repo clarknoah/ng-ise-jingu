@@ -1,3 +1,9 @@
 <p>
   misc works!
 </p>
+
+<input (keyup.enter)="enterPressed($event)" type="text" id="eleRef" name="" value="">
+
+<button type="button" (click)="changeInputValue()" name="button">Change Value</button>
+
+<h3>{{observableString | async}}</h3>

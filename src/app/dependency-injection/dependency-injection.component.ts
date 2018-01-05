@@ -10,12 +10,13 @@ import {ise_variable} from '../service/variable.service';
 })
 export class DependencyInjectionComponent implements OnInit {
 
-
+  var_string: string;
   constructor(
     private singletonOne: SingletonService,
     private factoryOne: FactoryService,
     private singletonTwo: SingletonService,
     private factoryTwo: FactoryService = new FactoryService()) {
+      this.var_string = ise_variable;
       this.factoryOne = new FactoryService();
       this.singletonOne.setString('Noah');
       this.singletonOne.setString('Leah');
