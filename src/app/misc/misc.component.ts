@@ -18,13 +18,16 @@ export class MiscComponent implements OnInit, DoCheck {
   test_obj: any = {firstName:'Charlie'};
   staticNum: number = 0;
   testObjDiff: any;
+  arrDiff: any;
   constructor(private el: ElementRef,
     private http: Http,
     private diff: KeyValueDiffers,
     private iter: IterableDiffers) {
+
         this.test_obj.name = "Noah";
         this.test_array.push['First Value!'];
         this.testObjDiff = diff.find([]).create(null);
+      this.arrDiff = iter.find([]).create(null);
 
    }
 
@@ -37,18 +40,20 @@ export class MiscComponent implements OnInit, DoCheck {
   }
 
   addToArray(){
-    this.testArray.push('New Value');
+    this.test_array.push('New Value');
   }
 
-  changeObjectValue(){
-
+  changeObj(){
+    this.test_obj.name = "frank";
   }
 
   ngDoCheck(){
-    if(this.diff){
+    const objChanges =this.testObjDiff.diff(this.test_obj);
+    const arrChanges = this.arrDiff.diff(this.test_array);
+    if(objChanges){
       console.log("Object Changed");
     }
-    if(this.iter){
+    if(arrChanges){
       console.log("wow");
     }
   //  if(){}
