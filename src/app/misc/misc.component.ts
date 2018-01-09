@@ -9,21 +9,48 @@ import {Observable} from 'rxjs';
 })
 export class MiscComponent implements OnInit, DoCheck {
 
+  testArray: string[] = ['frank'];
+  testObj: any = {firstName:'Noah',lastName:'Clark'};
+
+
   observableString: Observable<string>;
   test_array: string[] = [];
-  test_obj: any = {};
-  constructor(private el: ElementRef,private http: Http) {
+  test_obj: any = {firstName:'Charlie'};
+  staticNum: number = 0;
+  testObjDiff: any;
+  constructor(private el: ElementRef,
+    private http: Http,
+    private diff: KeyValueDiffers,
+    private iter: IterableDiffers) {
         this.test_obj.name = "Noah";
         this.test_array.push['First Value!'];
+        this.testObjDiff = diff.find([]).create(null);
 
    }
+
+  updateStatic(){
+    this.staticNum ++;
+  }
 
   ngOnInit() {
             this.getServerString();
   }
 
+  addToArray(){
+    this.testArray.push('New Value');
+  }
+
+  changeObjectValue(){
+
+  }
+
   ngDoCheck(){
-    console.log()
+    if(this.diff){
+      console.log("Object Changed");
+    }
+    if(this.iter){
+      console.log("wow");
+    }
   //  if(){}
   }
 
@@ -36,10 +63,6 @@ export class MiscComponent implements OnInit, DoCheck {
 
   enterPressed(event){
     console.log(event.target.value);
-  }
-
-  addToArray(){
-      this.test_array.push("New Name");
   }
 
   getServerString(){
