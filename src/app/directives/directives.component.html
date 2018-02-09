@@ -1,0 +1,45 @@
+<div class="">
+<h4>NgIf</h4>
+
+<button type="button"
+  (click)="ngIfShow =!ngIfShow"
+ name="button">Toggle If Show </button>
+<p *ngIf="ngIfShow===true">Show is True!</p>
+</div>
+
+<div class="">
+<h4>NgFor</h4>
+<p *ngFor="let name of ngForArray; let i = index">
+  {{name}} {{i}}
+  </p>
+</div>
+
+<div class="">
+<h4>NgClass</h4>
+</div>
+
+<div class="">
+<h4>NgStyle</h4>
+</div>
+
+<div class="">
+<h4>NgSwitch</h4>
+<button type="button" (click)="ngSwitchValue = 'first'" name="button">1</button>
+<button type="button" (click)="ngSwitchValue = 'second'"  name="button">2</button>
+<button type="button"(click)="ngSwitchValue = 'third'"  name="button">3</button>
+
+<div [ngSwitch]="ngSwitchValue">
+  <p *ngSwitchDefault>Sadness</p>
+  <p *ngSwitchCase="'first'">First</p>
+    <p *ngSwitchCase="'second'">second</p>
+      <p *ngSwitchCase="'third'">third</p>
+
+</div>
+
+</div>
+
+<div class="">
+<h4>ngNonBindable</h4>
+
+<p ngNonBindable>{{nonBindingValue}}</p>
+</div>

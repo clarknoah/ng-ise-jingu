@@ -1,0 +1,10 @@
+<form class="" method="post" *ngIf="loggedIn === false">
+  <div class="form-group">
+    <input type="username" #username name="" value="">
+    <input type="password" #password name="" value="">
+  </div>
+  <button type="button" (click)="login(username.value, password.value)" name="button">Login</button>
+</form>
+<div class="" *ngIf="loggedIn === true ">
+  <button type="button" (click)="logout()" name="button">Logout</button>
+</div>
