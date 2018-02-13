@@ -14,12 +14,32 @@
   </p>
 </div>
 
-<div class="">
+<div [ngClass]="ngClass">
 <h4>NgClass</h4>
+<button type="button" (click)="ngClass = 'bk-red'" name="button">Red</button>
+
+<button type="button" (click)="ngClass = 'bk-green'" name="button">Green</button>
+
+<button type="button" (click)="ngClass = 'bk-blue'" name="button">Bluez</button>
 </div>
 
-<div class="">
-<h4>NgStyle</h4>
+<div [style.background-color]="style">
+<h4>[style['background-color']]</h4>
+
+<button type="button" (click)="style = 'red'" name="button">Red</button>
+
+<button type="button" (click)="style = 'green'" name="button">Green</button>
+
+<button type="button" (click)="style = 'blue'" name="button">Bluea</button>
+</div>
+
+<div [ngStyle]="ngStyle">
+<h4 [ngStyle]="ngStyle">[ngStyle]</h4>
+<button type="button" (click)="ngStyle['background-color'] = 'red'" name="button">Red</button>
+
+<button type="button" (click)="ngStyle['background-color']  = 'green'" name="button">Green</button>
+
+<button type="button" (click)="ngStyle['background-color']  = 'blue'" name="button">Bluea</button>
 </div>
 
 <div class="">
@@ -38,8 +58,7 @@
 
 </div>
 
-<div class="">
-<h4>ngNonBindable</h4>
+<div class=""><h4>ngNonBindable</h4>
 
 <p ngNonBindable>{{nonBindingValue}}</p>
 </div>

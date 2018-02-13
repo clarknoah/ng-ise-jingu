@@ -11,6 +11,11 @@ export class DirectivesComponent implements OnInit {
   ngSwitchValue: string;
   nonBindingValue: string = "cat";
   ngForArray: string[] = ['noah','leah','hannah'];
+  ngClass: string = 'bk-red';
+  style: string = 'red';
+  ngStyle: any = {
+    'background-color': 'red'
+  };
 
   constructor() { }
 

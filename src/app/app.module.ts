@@ -66,11 +66,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+      FormsModule,
+      ReactiveFormsModule,
   ],
   providers: [
-    FormsModule,
-    ReactiveFormsModule,
     LoggedInGuard,
     {
       provide: FactoryService,

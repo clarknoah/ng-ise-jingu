@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import {
+  FormBuilder,
+  FormGroup,
+  AbstractControl,
+  Validators,
+  FormControl } from '@angular/forms';
 @Component({
   selector: 'form-builder',
   templateUrl: './form-builder.component.html',
@@ -7,9 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormBuilderComponent implements OnInit {
 
-  constructor() { }
+  iseForm: FormGroup;
+  constructor(fb: FormBuilder) {
+    this.iseForm = fb.group({
+      email:[],
+      age:[],
+      boolean:[],
+      birth:[]
+    });
+  }
 
   ngOnInit() {
+
   }
 
 }

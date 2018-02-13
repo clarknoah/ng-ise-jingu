@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'form-control',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormControlComponent implements OnInit {
 
+  form: FormControl = new FormControl();
   constructor() { }
 
   ngOnInit() {
