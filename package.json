@@ -22,8 +22,11 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^5.4.2",
+    "zone": "^0.3.4",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
