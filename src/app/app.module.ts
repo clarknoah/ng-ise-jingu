@@ -24,7 +24,9 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { MiscComponent } from './misc/misc.component';
 import { IseJinguComponent } from './ise-jingu/ise-jingu.component';
 
-
+import { ParamRoutingModule} from  './param-routing/param-routing.module';
+import { routes as childRoutes } from './param-routing/param-routing.module';
+import { MainLifecycleComponent } from './lifecycle/main-lifecycle/main-lifecycle.component';
 
 export function loadFactory(){
   return new FactoryService();
@@ -39,7 +41,7 @@ const routes: Routes = [
   {path: 'form-builder', component: FormBuilderComponent},
   {path: 'validation', component: ValidationComponent},
   {path: 'dependency_injection', component: DependencyInjectionComponent},
-  {path: 'param_routing', component: ParamRoutingComponent},
+  {path: 'param_routing', component: ParamRoutingComponent, children: childRoutes},
   {path: 'input_output', component: InputOutputComponent},
   {path: 'http', component: HttpComponent},
   {path: 'lifecycle', component: LifecycleComponent},
@@ -62,13 +64,15 @@ const routes: Routes = [
     HttpComponent,
     LifecycleComponent,
     MiscComponent,
-    IseJinguComponent
+    IseJinguComponent,
+    MainLifecycleComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
       FormsModule,
       ReactiveFormsModule,
+      ParamRoutingModule
   ],
   providers: [
     LoggedInGuard,

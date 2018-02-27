@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class SingletonService {
 
 
-    serviceArray: any[];
+    serviceArray: any[] = [];
 
     constructor() { }
 

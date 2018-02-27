@@ -5,7 +5,9 @@ export class FactoryService {
 
   serviceArray: any[];
 
-  constructor() { }
+  constructor() {
+    this.serviceArray = [];
+  }
 
   addToArray(value){
     this.serviceArray.push(value);

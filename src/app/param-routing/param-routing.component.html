@@ -1,3 +1,12 @@
-<p>
-  param-routing works!
-</p>
+<ul>
+  <li><a [routerLink]="['/']">Go To Main!</a></li>
+  <li><a [routerLink]="['./main']">Go To Sub Main!</a></li>
+  <li>
+    <input type="text" #id name="" value="">
+    <button (click)="goToRoute(id.value)"
+    name="button">To to Param View</button>
+  </li>
+</ul>
+
+
+<router-outlet></router-outlet>

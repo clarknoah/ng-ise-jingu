@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,
+  Router } from '@angular/router';
+
 
 @Component({
   selector: 'param-routing',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParamRoutingComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
   }
+
+  goToRoute(param){
+    console.log(`Main Router: ${this.route}`);
+    this.router.navigate(['./',param], {relativeTo: this.route});
+  }
+
+
 
 }
