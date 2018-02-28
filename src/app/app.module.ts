@@ -27,6 +27,9 @@ import { IseJinguComponent } from './ise-jingu/ise-jingu.component';
 import { ParamRoutingModule} from  './param-routing/param-routing.module';
 import { routes as childRoutes } from './param-routing/param-routing.module';
 import { MainLifecycleComponent } from './lifecycle/main-lifecycle/main-lifecycle.component';
+import { IoOneComponent } from './input-output/io-one/io-one.component';
+import { IoTwoComponent } from './input-output/io-two/io-two.component';
+import { IoThreeComponent } from './input-output/io-three/io-three.component';
 
 export function loadFactory(){
   return new FactoryService();
@@ -66,6 +69,9 @@ const routes: Routes = [
     MiscComponent,
     IseJinguComponent,
     MainLifecycleComponent,
+    IoOneComponent,
+    IoTwoComponent,
+    IoThreeComponent,
   ],
   imports: [
     BrowserModule,

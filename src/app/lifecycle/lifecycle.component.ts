@@ -45,12 +45,13 @@ AfterViewChecked {
 
   ngAfterViewInit(){
     console.log('Called after AfterContentChecked (once)');
-    console.log(`Lifecycle AfterContentChecked: ${this.stepper()}`);
+    console.log(`Lifecycle AfterViewInit: ${this.stepper()}`);
   }
 
   ngAfterViewChecked(){
     console.log('Called after AfterViewInit (every cycle)');
-    console.log(`Lifecycle AfterContentChecked: ${this.stepper()}`);
+    console.log(`Lifecycle AfterViewChecked: ${this.stepper()}`);
+    console.log('\n ******************* \n')
   }
 
   toggleChild(){

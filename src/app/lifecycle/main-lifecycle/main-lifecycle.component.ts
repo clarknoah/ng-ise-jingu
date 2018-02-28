@@ -4,8 +4,10 @@ import { Component,
     AfterContentInit,
     AfterContentChecked,
     AfterViewInit,
+    OnDestroy,
     AfterViewChecked,
     Input } from '@angular/core';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'main-lifecycle',
@@ -18,14 +20,17 @@ AfterContentInit,
 AfterContentChecked,
 AfterContentChecked,
 AfterViewInit,
-AfterViewChecked  {
+AfterViewChecked,
+OnDestroy  {
 
-  @Input() step: number;
+  step: number;
   constructor() {
     console.log(`Child Constructor: ${this.stepper()}`)
+    this.step = 0;
   }
   ngOnInit() {
     console.log(`Child OnInit: ${this.stepper()}`);
+    this.step = _.cloneDeep(this.step);
   }
 
   ngDoCheck(){
@@ -44,17 +49,22 @@ AfterViewChecked  {
 
   ngAfterViewInit(){
     console.log('Called after AfterContentChecked (once)');
-    console.log(`Child AfterContentChecked: ${this.stepper()}`);
+    console.log(`Child AfterViewInit: ${this.stepper()}`);
   }
 
   ngAfterViewChecked(){
     console.log('Called after AfterViewInit (every cycle)');
-    console.log(`Child AfterContentChecked: ${this.stepper()}`);
+    console.log(`Child AfterViewChecked: ${this.stepper()}`);
+        console.log('\n ******************* \n')
   }
 
+  ngOnDestroy(){
+      console.log(`Child OnDestoryd: ${this.stepper()}`);
+  }
   stepper(){
     this.step ++;
     return this.step;
   }
+
 
 }
