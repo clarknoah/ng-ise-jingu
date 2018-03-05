@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FactoryService } from './services/factory.service';
@@ -30,6 +31,7 @@ import { MainLifecycleComponent } from './lifecycle/main-lifecycle/main-lifecycl
 import { IoOneComponent } from './input-output/io-one/io-one.component';
 import { IoTwoComponent } from './input-output/io-two/io-two.component';
 import { IoThreeComponent } from './input-output/io-three/io-three.component';
+import { PopupDirective } from './content-projection/popup.directive';
 
 export function loadFactory(){
   return new FactoryService();
@@ -72,13 +74,15 @@ const routes: Routes = [
     IoOneComponent,
     IoTwoComponent,
     IoThreeComponent,
+    PopupDirective,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
       FormsModule,
       ReactiveFormsModule,
-      ParamRoutingModule
+      ParamRoutingModule,
+      HttpModule
   ],
   providers: [
     LoggedInGuard,

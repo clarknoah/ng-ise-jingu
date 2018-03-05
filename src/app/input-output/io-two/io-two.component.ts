@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'io-two',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IoTwoComponent implements OnInit {
 
-  constructor() { }
+    @Input() ioInput: string;
 
-  ngOnInit() {
+    @Output() ioOutput: EventEmitter<string>;
+
+
+    constructor() { }
+
+    ngOnInit() {
+      this.ioOutput.emit(this.reverseValue(this.ioInput));
+    }
+
+    reverseValue(variable){
+      return variable.split("").reverse().join("")
+    }
+
   }
-
-}

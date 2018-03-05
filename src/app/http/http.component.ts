@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Http} from '@angular/http';
 
 @Component({
   selector: 'http',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HttpComponent implements OnInit {
 
-  constructor() { }
+  httpValue: string;
+  constructor(private http: Http) {
+    this.http.request('http://jsonplaceholder.typicode.com/posts/1')
+      .subscribe(
+        (data)=>{
+          this.httpValue = data.json().title;
+        }
+      )
+  }
 
   ngOnInit() {
   }

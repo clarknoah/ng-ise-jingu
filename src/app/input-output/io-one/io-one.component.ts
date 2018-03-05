@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'io-one',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IoOneComponent implements OnInit {
 
+  @Input() ioInput: string;
+
+  @Output() ioOutput: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.reverseValue(this.ioInput));
+    this.ioOutput.emit(this.reverseValue(this.ioInput));
+  }
+
+  reverseValue(variable){
+    return variable.split("").reverse().join("");
+  }
+
+  reverseString(){
+    var ioStr = this.reverseValue(this.ioInput);
+    this.ioOutput.emit(ioStr);
   }
 
 }

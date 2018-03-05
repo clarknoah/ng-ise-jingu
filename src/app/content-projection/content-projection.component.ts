@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { PopupDirective } from './popup.directive';
 
 @Component({
   selector: 'content-projection',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentProjectionComponent implements OnInit {
 
+  popTitle1: string = 'Test 1';
+  @ViewChild('popper1') popper: PopupDirective;
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  ngAfterViewInit(){
+    this.popper.displayMessage();
   }
 
 }

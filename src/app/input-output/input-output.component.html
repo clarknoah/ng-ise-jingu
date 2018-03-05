@@ -1,3 +1,13 @@
 <p>
   input-output works!
 </p>
+<io-one #io1 [ioInput]="io1Input" (ioOutput)="io1Out($event)"></io-one>
+<io-one #io2 [ioInput]="io2Input" (ioOutput)="io2Out($event)"></io-one>
+
+
+
+<h1>io1Result</h1>
+<p *ngIf="io1Result">{{io1Result}}</p>
+
+<h1>io2Result</h1>
+<p *ngIf="io2Result">{{io2Result}}</p>
