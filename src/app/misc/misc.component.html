@@ -1,3 +1,38 @@
 <p>
   misc works!
 </p>
+
+<div class="">
+  <h1>Event Usage</h1>
+
+  <input type="text" id="eleRef"
+  (keyup.enter)="getInput($event)" name=""
+  placeholder="Tests Event" value="">
+</div>
+
+
+<div class="">
+  <h1>Utilizes EleRef</h1>
+  <button type="button" (click)="updateInputValue()"
+   name="button">Update Input Value</button>
+  <p>{{inputValue}}</p>
+
+</div>
+
+
+<div class="">
+  <h1>Test Diff Obj</h1>
+  <input type="text"
+  placeholder="new name" #nameValue value="">
+  <button type="button" (click)="changeObject(nameValue.value)"
+   name="button">Change Name Value</button>
+</div>
+
+
+<div class="">
+  <h1>Test Diff Obj</h1>
+  <input type="text"
+  placeholder="new name" #arrValue value="">
+  <button type="button" (click)="changeArray(arrValue.value)"
+   name="button">Add Value to Array</button>
+</div>

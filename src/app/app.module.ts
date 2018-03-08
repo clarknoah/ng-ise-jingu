@@ -32,6 +32,7 @@ import { IoOneComponent } from './input-output/io-one/io-one.component';
 import { IoTwoComponent } from './input-output/io-two/io-two.component';
 import { IoThreeComponent } from './input-output/io-three/io-three.component';
 import { PopupDirective } from './content-projection/popup.directive';
+import { ContentComponent } from './content-projection/content/content.component';
 
 export function loadFactory(){
   return new FactoryService();
@@ -75,6 +76,7 @@ const routes: Routes = [
     IoTwoComponent,
     IoThreeComponent,
     PopupDirective,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
